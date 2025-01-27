@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>小叶同学的2025蛇年惊喜</title>
+    <style>
+        /* 红包3D动画 */
+        .red-envelope {
+            transform-style: preserve-3d;
+            transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .open-envelope {
+            transform: rotateX(180deg) translateY(-50%);
+        }
+        /* 钞票抽出效果 */
+        @keyframes pull-money {
+            0% { transform: translateY(0) rotate(-15deg); }
+            100% { transform: translateY(-120%) rotate(5deg); }
+        }
+        .money {
+            background-image: url('data:image/png;base64,...'); /* Base64编码的200元纸币图 */
+            animation: pull-money 2s 0.5s forwards paused;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heartbeat">小叶同学 & 2025蛇年专属回忆</h1>
+        <div class="red-envelope" onclick="openEnvelope()">
+            <div class="money"></div>
+        </div>
+        <canvas id="fireworks"></canvas>
+    </div>
+
+    <script>
+        // 初始化烟花与蛇形轨迹（参考网页7的蛇类实现）
+        class SnakeFirework {
+            constructor() {
+                this.particles = [];
+                // 粒子运动轨迹模拟蛇形[citation:7]
+            }
+        }
+
+        // 红包交互逻辑
+        function openEnvelope() {
+            document.querySelector('.red-envelope').classList.add('open-envelope');
+            document.querySelector('.money').style.animationPlayState = 'running';
+            // 触发祝福语浮现
+            setTimeout(() => {
+                showBlessing("这是我们第一个周年，愿未来如蛇般灵动蜿蜒却始终同行");
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
